@@ -16,7 +16,8 @@ String fileName = "RhapsodyInBlue.mp3";
  
 void setup()
 {
-  size(500, 200);
+  fullScreen();
+  //size(500, 200);
  
   minim = new Minim(this);
  
@@ -41,7 +42,6 @@ void setup()
  
 void draw()
 {
-  
   // get ambiant noise level
   // mapped to a value on [0,1]
   float ambiantLevel = in.mix.level();
@@ -53,5 +53,6 @@ void draw()
   float dB = map(ambiantLevel, 0, 1, 0, -10);
   gain.setValue(dB);
   
-  text("Current Gain is " + dB + " dB.", 10, 20);
+  // display gain value
+  text("Gain: " + dB + " dB.", 10, 20);
 }
