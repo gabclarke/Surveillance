@@ -50,9 +50,9 @@ void draw()
   background(255 * ambiantLevel * 10);
   
   // update the gain value
-  float dB = map(ambiantLevel, 0, 1, 0, -10);
+  float dB = map(ambiantLevel, 0, 1, 0, 30);
   gain.setValue(dB);
   
   // display gain value
-  text("Gain: " + dB + " dB.", 10, 20);
+  text("G A I N : " + dB + " dB.", 10, 20);
 }
