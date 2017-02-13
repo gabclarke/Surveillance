@@ -1,4 +1,4 @@
-#N canvas 640 23 628 497 10;
+#N canvas 568 23 628 497 10;
 #X obj 86 311 dac~;
 #X obj 86 276 osc~ 440;
 #X obj 86 248 mtof;
@@ -18,7 +18,7 @@
 #X obj 27 19 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 60 19 stop;
-#X text 421 20 completed using tutorial at https://youtu.be/FkmMzqohsDo
+#X text 272 469 completed using tutorial at https://youtu.be/FkmMzqohsDo
 ;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;
