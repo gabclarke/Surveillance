@@ -4,17 +4,21 @@ import ddf.minim.ugens.*;
 Minim minim;
 AudioInput in;
 
+// Window setup
+int windowWidth = 1200;
+int windowHeight = 600;
+int maxWidth = windowWidth - 50;
+float baseline = windowHeight*3/4;
 
-// Set the width and height of the window to make
-int windowWidth = 800;
-int windowHeight = 300;
-float maxTemp = 1; //Maximum temperature expect to read
-float[] readings = new float[windowWidth]; // initialized to zeroes
+float maxLevel = 2; // Maximum sound level expected
+float[] readings = new float[windowWidth]; // Initialized with zeroes
+float fade = 0;
+
  
 void setup()
 {
   //fullScreen();
-  size(800, 300);  // Set up the window
+  size(1200, 600);
   
   minim = new Minim(this);
  
@@ -24,22 +28,34 @@ void setup()
  
 void draw()
 {
-  background(0, 0, 0, TIME SINCE START);  // Sets the background to white and clears screen each time through loop
-  
+  background(0, 0, 0); 
   
   float ambiantLevel = in.mix.level()*15;
   
-  readings[windowWidth - 1] = ambiantLevel;
+  readings[maxWidth] = ambiantLevel;
    
   // Map the element so it fits in our graph
-  readings[windowWidth - 1] = map(readings[windowWidth - 1], 0, maxTemp, 0, height);
+  readings[maxWidth] = map(readings[maxWidth], 0, maxLevel, 0, height);
    
   // Plot all the points
-  for (int i = 0; i < windowWidth - 1; i++)
+  for (int i = 0; i < maxWidth; i++)
   {
-    ellipse(i, height*3/4 - readings[i], 2, 2);
-    noStroke();
-    fill(255);
+    // Set opacity so points fade over time
+    fade = map(i, 0, windowWidth, 0, 255);
+    
+    // Modify element y-coordinate
+    float y = baseline - readings[i];
+   
+   
+    // Bar plotting
+    line(i, y, i, baseline);
+    stroke(fade);
+    
+    // Dot plotting
+    //ellipse(i, y, 2, 2);
+    //noStroke();
+    //fill(fade);
+    
     readings[i] = readings[i + 1]; // Shift the readings to the left so can put the newest reading in
   }  
   
