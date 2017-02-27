@@ -4,21 +4,23 @@ import ddf.minim.ugens.*;
 Minim minim;
 AudioInput in;
 
-// Window setup
-int windowWidth = 1200;
-int windowHeight = 600;
-int maxWidth = windowWidth - 50;
-float baseline = windowHeight*3/4;
+int maxWidth;
+float baseline;
 
-float maxLevel = 2; // Maximum sound level expected
-float[] readings = new float[windowWidth]; // Initialized with zeroes
-float fade = 0;
-
+float maxLevel; // Maximum sound level expected
+float[] readings; // Sound level readings
+float fade;
  
 void setup()
 {
   //fullScreen();
   size(1200, 600);
+  maxWidth = width - 50;
+  baseline = height * .9;
+  
+  maxLevel = 2;
+  readings =  new float[width]; // Initialized to zeroes
+  fade = 0;
   
   minim = new Minim(this);
  
@@ -41,7 +43,7 @@ void draw()
   for (int i = 0; i < maxWidth; i++)
   {
     // Set opacity so points fade over time
-    fade = map(i, 0, windowWidth, 0, 255);
+    fade = map(i, 0, width, 0, 255);
     
     // Modify element y-coordinate
     float y = baseline - readings[i];
