@@ -7,73 +7,56 @@ Minim minim;
 AudioInput in;
 FFT fft;
 
-float r;
+float d;
 float arc;
 float theta;
-
-float tileSize;
-float tileColor;
-float x;
-float y;
+float max;
+float weight;
+float freqColor;
 
 void setup(){
   fullScreen();
   colorMode(HSB);
   background(0);
-  smooth();
+  //smooth();
   noStroke();
   
-  float max = min(width, height);
-  print(max);
-  
-  r = max - 6;
+  max = min(width, height);
+  weight = 6;
+  d = max - weight;
   arc = PI/64;
   theta = -HALF_PI;
 
   minim = new Minim(this);
   in = minim.getLineIn(Minim.MONO, 512);
-
-  tileSize = 10;
-  tileColor = 100;
-  x = 0;
-  y = 0;
-
 }
 
 void draw(){
 
   translate(width/2, height/2);
   
-  tileColor = map(in.left.get(50), 0, 1, 0, 255);
-  tileColor = map(in.right.level(), 0, .3, 235, 5);
+  // break when diameter smaller than _ and theta = TWO_PI*(3/4)
+  if (d > 775) {
   
-  noFill();
-  stroke(tileColor, 235, 250);
-  strokeWeight(6);
-  smooth();
-  arc(0, 0, r, r, theta, theta + arc);
-  theta += arc;
-  r -= .25;
-  
-  if(theta > TWO_PI){
-    theta = 0;
-  }
-  
-  //x += tileSize;
+    freqColor = map(in.left.get(50), 0, 1, 0, 255);
+    freqColor = map(in.right.level(), 0, .3, 235, 5);
+    
+    noFill();
+    stroke(freqColor, 235, 250);
+    strokeWeight(weight);
+    smooth();
+    arc(0, 0, d, d, theta, theta + arc);
+    theta += arc % TWO_PI;
+    d -= .12;
 
-  //if(x > width){
-  //  x = 0;
-  //  y += tileSize;
-  //}
+  }
 
 }
 
 void keyPressed(){
     background(0);
-    //x = 0;
-    //y = 0;
-    r = 0;
-    theta = 0;
+    d = max - weight;
+    theta = -HALF_PI;
 }
 
 void stop(){
