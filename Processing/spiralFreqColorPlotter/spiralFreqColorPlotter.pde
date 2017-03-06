@@ -18,7 +18,6 @@ void setup(){
   fullScreen();
   colorMode(HSB);
   background(0);
-  //smooth();
   noStroke();
   
   max = min(width, height);
