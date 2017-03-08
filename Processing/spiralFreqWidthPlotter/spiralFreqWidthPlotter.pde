@@ -119,10 +119,3 @@ String fileNamer(){
   fileName = date + " at " + time;
   return fileName;
 }
-
-//void exportSVG(){
-//  String fileName = "hello.svg";
-//  beginRecord(SVG, "images/" + fileName);
-//  drawSpiral();
-//  endRecord();
-//}
