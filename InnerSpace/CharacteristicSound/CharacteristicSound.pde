@@ -37,7 +37,7 @@ void setup(){
   max = min(width, height); // maximum spiral diameter is smaller dimension
   weight = 6;
   d = max - weight;
-  min = 775;
+  min = 241;
   arc = PI/64;
   theta = -HALF_PI;
 
@@ -72,11 +72,13 @@ void draw(){
 }
 
 void keyPressed(){
-  // restarts visualization, initializes new recording
-  background(0);
-  d = max - weight;
-  theta = -HALF_PI;
-  recording = 1;
+  // restarts visualization, initializes new recording on SPACE press
+  if (key == ' '){
+    background(0);
+    d = max - weight;
+    theta = -HALF_PI;
+    recording = 1;
+  }
 }
 
 void stop(){
