@@ -1,3 +1,12 @@
+// "Record" audio visualizer
+// Gaby Clarke, Spring 2017
+// Parsons Paris, Spatial Lab
+
+// This sketch takes audio input and visualizes it as if we were pressing a 
+// vinyl record.  The exported PDF files are intended to be lasercut into 
+// physical "prints" of the characteristic sounds of a physical space.
+
+
 import ddf.minim.*;
 import ddf.minim.signals.*;
 import ddf.minim.analysis.*;
