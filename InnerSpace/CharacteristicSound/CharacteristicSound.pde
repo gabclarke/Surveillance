@@ -30,6 +30,7 @@ String fileName;  // filename for export
 
 void setup(){
   fullScreen();
+  //size(500,500);
   colorMode(HSB);
   background(0);
   noStroke();
@@ -53,7 +54,7 @@ void draw(){
   // start recording visualization
   if (recording == 1) {
     fileName = fileNamer();
-    beginRecord(PDF, "exports/" + fileName + ".pdf");
+    beginRecord(PDF, "Exports/" + fileName + ".pdf");
     recording = 0;
   }
    
@@ -62,6 +63,7 @@ void draw(){
      drawSpiral();
   }
   else{
+    saveFrame("Exports/" + fileName + ".png");
     drawCutCircles();
     recording = 2;
   }
@@ -91,8 +93,8 @@ void drawSpiral(){
   // draws spiral audio visualization
   
   // set weight according to audio input pitch and volume
-  weight = map(in.left.get(50), 0, 1, 2, 10);
-  weight = map(in.right.level(), 0, .3, 2, 10);
+  weight = map(in.left.get(50), -.5, 1, 1.5, 10);
+  weight = map(weight*in.right.level(), 0, .5, 1.5, 10);
   
   // draw arc
   noFill();
