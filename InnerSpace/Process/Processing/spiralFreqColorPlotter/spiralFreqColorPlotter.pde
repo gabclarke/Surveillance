@@ -35,7 +35,7 @@ void draw(){
   translate(width/2, height/2);
   
   // break when diameter smaller than _ and theta = TWO_PI*(3/4)
-  if (d > 775) {
+  if (d > 200) {
   
     freqColor = map(in.left.get(50), 0, 1, 0, 255);
     freqColor = map(in.right.level(), 0, .3, 235, 5);
