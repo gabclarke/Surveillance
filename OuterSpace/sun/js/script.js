@@ -23,14 +23,13 @@ $(document).ready(function(){
   function success(position) {
     lat = position.coords.latitude.toFixed(8);
     long = position.coords.longitude.toFixed(8);
-    // output.innerHTML = '<p>Latitude is ' + lat + '° <br>Longitude is ' + long + '°</p>';
+
 		$.ajax({
 			type: 'GET',
 			url: "http://api.sunrise-sunset.org/json?lat="+lat+"&lng="+long+"&date=today&formatted=0",
 			dataType: 'json',
 			success: function (data) {
 				rise = data.results.sunrise.slice(11,19);
-				console.log(rise);
 				set = data.results.sunset.slice(11,19);
 				now = h+":"+m+":"+s;
 
@@ -39,11 +38,6 @@ $(document).ready(function(){
 				} else {
 					document.body.style.background = "#051F2B";
 				}
-				//
-				// $(".data").append('<p>'+rise+'</p>');
-				// $(".data").append('<p>'+set+'</p>');
-				// $(".data").append('<p>'+h+":"+m+":"+s+'</p>');
-
 			},
 			error: function() { alert('Failed!'); },
 		});
