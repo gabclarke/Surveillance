@@ -19,8 +19,6 @@ $(document).ready(function(){
 	var s = d.getSeconds();
 	var now;
 
-	var output = document.getElementById("out");
-
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser.</p>";
     return;
