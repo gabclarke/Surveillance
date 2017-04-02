@@ -1,5 +1,11 @@
+// day || night
+// experiment by Gaby Clarke, Spring 2017
+// Parsons Paris Art, Media, and Technology
+// Core Lab: Spatial
 
-// Documentation: http://sunrise-sunset.org/api
+// This experiment makes use of HTML5 Geolocation
+// (https://www.w3schools.com/html/html5_geolocation.asp) and the Sunrise Sunset
+// API (http://sunrise-sunset.org/api).
 
 $(document).ready(function(){
 
@@ -46,8 +52,6 @@ $(document).ready(function(){
   function error() {
     output.innerHTML = "Unable to retrieve your location";
   }
-
-  // output.innerHTML = "<p>Locating…</p>";
 
 	navigator.geolocation.getCurrentPosition(success, error);
 
