@@ -35,13 +35,14 @@ ul {
 
 @media only screen and (min-width: 600px){
 	body {
-		background-color: red;
+		background-color: magenta;
+		/*background-color: MediumVioletRed;*/
 	}
 }
 
 @media only screen and (min-width: 768px){
 	body {
-		background-color: blue;
+		background-color: cyan;
 	}
 }
 
@@ -49,8 +50,9 @@ ul {
 .col{
     float: left;
     width: 100%;
-    border: 1px solid red;
-    height: 200px;
+		padding: 5px;
+    /*border: 1px solid red;
+    height: 200px;*/
 }
 
 @media only screen and (min-width: 600px) {

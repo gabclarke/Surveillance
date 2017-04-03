@@ -38,10 +38,19 @@ $(document).ready(function(){
 				h = ('0'+h).slice(-2);
 				m = ('0'+m).slice(-2);
 				s = ('0'+s).slice(-2);
-				now = h+":"+m+":"+s;
+				// now = h+":"+m+":"+s;
+				console.log(rise);
+				now = set;
 
 				if (now > rise && now < set){
 					document.body.style.background = "#F4B908";
+				} else if (now == rise || now == set) {
+					console.log("twilight")
+					document.body.style.background= "linear-gradient(45deg, #2f3441 50%, #212531 50%)";
+
+					// background-color: #34ADFF;
+					//   background-image: -webkit-linear-gradient(150deg, #34ADFF 35%, #4CBFFF 35%);
+
 				} else {
 					document.body.style.background = "#051F2B";
 				}

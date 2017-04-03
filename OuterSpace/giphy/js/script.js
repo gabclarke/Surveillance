@@ -15,7 +15,7 @@ $(document).ready(function(){
 			console.log(data.data[0]);
 			for(var i = 0; i<limit; i++){
 				if(data.data[i]){
-					$(".data").append('<li><img src="'
+					$(".data").append('<li class="col col-m-6 col-4"><img src="'
 										+data.data[i].images.downsized_large.url+'"></li>');
 				}
 			}
