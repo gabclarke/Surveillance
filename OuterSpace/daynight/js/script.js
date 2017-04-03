@@ -35,6 +35,9 @@ $(document).ready(function(){
 			success: function (data) {
 				rise = data.results.sunrise.slice(11,19);
 				set = data.results.sunset.slice(11,19);
+				h = ('0'+h).slice(-2);
+				m = ('0'+m).slice(-2);
+				s = ('0'+s).slice(-2);
 				now = h+":"+m+":"+s;
 
 				if (now > rise && now < set){
