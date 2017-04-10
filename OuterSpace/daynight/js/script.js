@@ -39,18 +39,15 @@ $(document).ready(function(){
 				h = ('0'+h).slice(-2);
 				m = ('0'+m).slice(-2);
 				s = ('0'+s).slice(-2);
-				// now = h+":"+m+":"+s;
-				console.log(rise);
-				now = rise;
+				now = h+":"+m+":"+s;
 				angle = Math.atan($(document).height()/$(document).width())/(Math.PI / 180);
-				console.log(angle);
 
 				if (now > rise && now < set){
 					document.body.style.background = "#F4B908";
 				} else if (now == rise) {
 					document.body.style.background= "linear-gradient("+angle+"deg, #051F2B 50%, #F4B908 50%)";
 				} else if (now == set) {
-					document.body.style.background= "linear-gradient(45deg, #F4B908 50%, #051F2B 50%)";
+					document.body.style.background= "linear-gradient("+angle+"deg, #F4B908 50%, #051F2B 50%)";
 				} else {
 					document.body.style.background = "#051F2B";
 				}
