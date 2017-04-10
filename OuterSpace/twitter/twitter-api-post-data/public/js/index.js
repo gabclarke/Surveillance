@@ -5,17 +5,17 @@ var socket = io.connect();
 socket.on('connect', onSocketConnect);
 socket.on('error', onSocketError);
 socket.on('tweetSended', function(){
-	alert('Tweet Has Been Sended');
+	alert('Tweet sent');
 });
 
 socket.on('tweetNotSended', function(){
-	alert('Tweet Has Been Not Sended');
+	alert('Tweet not sent');
 });
 
 
 jQuery(document).ready(function($) {
- 
- 	var data = "tweet from nodejs";
+
+ 	var data = "testing testing 1 2 3";
 
 	$('button').on('click', function(){
 		socket.emit('tweet', data);

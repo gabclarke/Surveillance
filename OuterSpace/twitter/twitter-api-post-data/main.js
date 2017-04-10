@@ -21,7 +21,7 @@ module.exports = function(app, io){
 
 		socket.on('tweet', function(tweet){
 			var tweet = {
-				status: tweet 
+				status: tweet
 			} // this is the tweet message
 
 				T.post('statuses/update', tweet, tweeted); // this is how we actually post a tweet ,again takes three params 'statuses/update' , tweet message and a call back function
@@ -36,7 +36,7 @@ module.exports = function(app, io){
 
 					else{
 						io.sockets.emit('tweetSended');
-						console.log("Voila It worked!");
+						console.log("Voila, it worked!");
 
 					}
 
@@ -51,5 +51,5 @@ module.exports = function(app, io){
 
 
 
-// - - - END FUNCTIONS - - - 
+// - - - END FUNCTIONS - - -
 };
