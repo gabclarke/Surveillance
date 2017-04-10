@@ -18,6 +18,7 @@ $(document).ready(function(){
 	var m = d.getMinutes();
 	var s = d.getSeconds();
 	var now;
+	var angle;
 
   if (!navigator.geolocation){
     output.innerHTML = "<p>Geolocation is not supported by your browser.</p>";
@@ -40,17 +41,16 @@ $(document).ready(function(){
 				s = ('0'+s).slice(-2);
 				// now = h+":"+m+":"+s;
 				console.log(rise);
-				now = set;
+				now = rise;
+				angle = Math.atan($(document).height()/$(document).width())/(Math.PI / 180);
+				console.log(angle);
 
 				if (now > rise && now < set){
 					document.body.style.background = "#F4B908";
-				} else if (now == rise || now == set) {
-					console.log("twilight")
-					document.body.style.background= "linear-gradient(45deg, #2f3441 50%, #212531 50%)";
-
-					// background-color: #34ADFF;
-					//   background-image: -webkit-linear-gradient(150deg, #34ADFF 35%, #4CBFFF 35%);
-
+				} else if (now == rise) {
+					document.body.style.background= "linear-gradient("+angle+"deg, #051F2B 50%, #F4B908 50%)";
+				} else if (now == set) {
+					document.body.style.background= "linear-gradient(45deg, #F4B908 50%, #051F2B 50%)";
 				} else {
 					document.body.style.background = "#051F2B";
 				}
