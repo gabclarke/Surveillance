@@ -4,21 +4,32 @@ $(document).ready(function(){
 // http://api.nytimes.com/svc/news/{version}/content/{source}/{section}[/time-period][.response-format]?api-key={your-API-key}
 // http://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=bb61482c14134196b907cea6abe3e8e2
 
-	// Built by LucyBot. www.lucybot.com
 	var url = "https://api.nytimes.com/svc/news/v3/content/all/all.json";
-	url += ;
+	url += '?api-key=bb61482c14134196b907cea6abe3e8e2';
+	console.log('attempting');
 
 	$.ajax({
 	  url: url,
 	  method: 'GET',
 		success: function (data) {
-			console.log('data')
+			console.log('success');
+			console.log(data.results);
+			for (var i = 0; i<30; i++){
+				if(data.results[i]){
+					$(".data").append("<li>" + data.results[i].title + "</li>")
+				}
+			}
 		}
-	}).done(function(result) {
-	  console.log(result);
-	}).fail(function(err) {
-	  throw err;
-	});
+	})
+	// }).done(function(result) {
+	//   console.log(result);
+	// 	for (var i = 0; i++){ // might want to limit this
+	//
+	// 	}
+	//
+	// }).fail(function(err) {
+	//   throw err;
+	// });
 
 	// var apiKey = "bb61482c14134196b907cea6abe3e8e2";
 	//
