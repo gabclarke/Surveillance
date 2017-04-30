@@ -1,9 +1,4 @@
-/*
-
-Tinkering around with a fixed nav bar, and changing it based on scroll
-
-
-*/
+// Adapted from code at http://codepen.io/Dannzzor/pen/dlAap
 
 $(document).ready(function(){
   $(window).scroll(function(){
@@ -13,15 +8,5 @@ $(document).ready(function(){
     } else {
         $('body').removeClass('header-fixed');
     }
-    // // change the style of the navbar when the user scrolls into the next zone.
-    // // get the distance of the 2nd section from the top of the page - height of header.
-    // var topOffset = $('#demosection2').offset().top;
-    // var headerHeight = $('#topnav').height();
-    // var transitionPoint = topOffset - headerHeight;
-    // if (scrollTop > transitionPoint) {
-    //     $('#topnav').addClass('alt-header');
-    // } else {
-    //     $('#topnav').removeClass('alt-header');
-    // }
   });
 });
