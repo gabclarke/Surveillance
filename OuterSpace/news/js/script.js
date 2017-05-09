@@ -9,7 +9,8 @@ $(document).ready(function(){
 	document.getElementById("today").innerHTML = today.toLocaleDateString("en-US",options);
 
 	var url = "https://api.nytimes.com/svc/news/v3/content/all/all.json";
-	url += '?api-key=bb61482c14134196b907cea6abe3e8e2';
+	var key = config.NYTIMES_KEY;
+	url += '?api-key=' + key;
 
 	$.ajax({
 	  url: url,
