@@ -19,7 +19,6 @@ body {
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
-  /*font-family: "Lato","Verdana",sans-serif;*/
 	/*font-family: 'Sorts Mill Goudy', serif;*/
 	font-family: Georgia, serif;
   -webkit-font-smoothing: antialiased;
@@ -71,7 +70,7 @@ nav ul, nav li, nav a {
 }
 
 .divider {
-	color: grey;
+	color: LightGrey;
 }
 
 nav ul {
@@ -80,7 +79,6 @@ nav ul {
 
 nav li {
   display: inline;
-  /*float: left;*/
 }
 
 nav a {
@@ -92,7 +90,7 @@ nav a {
 }
 
 nav a:hover {
-  color: red;
+  text-decoration: underline;
 }
 
 .logo {
@@ -104,14 +102,20 @@ nav a:hover {
   transition: 0.7s all;
 }
 
-section .inner {
-  padding-top: 200px;
+hr {
+  border-style: solid;
+  border-width: .5px;
+  border-color: LightGrey;
 }
 
+.thick {
+  border-width: 1px;
+  border-color: #000;
+}
 
-
-
-
+section .inner {
+  padding-top: 225px;
+}
 
 ul.data li {
 	padding-bottom: 20px;
@@ -119,4 +123,29 @@ ul.data li {
 
 ul.data li h1 {
 	font-weight: 500;
+}
+
+ul.data a{
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+
+ul.data a:hover {
+  text-decoration: underline;
+}
+
+ul.data .byline {
+  color: grey;
+}
+
+h3 {
+  font-style: italic;
+  color: grey;
+  text-align: center;
+}
+
+#end {
+  padding-top: 50px;
+  padding-bottom: 75px;
 }
