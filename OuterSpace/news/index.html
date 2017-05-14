@@ -6,35 +6,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GLITCH NEWS</title>
 	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="style/print.css">
 	<script src="js/libs/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<script src="js/html2canvas/dist/html2canvas.js" type="text/javascript"></script>
+	<script src="js/glitch/glitch.js" type="text/javascript"></script>
 	<script src='js/config.js' type='text/javascript' ></script>
 	<script src="js/script.js" type="text/javascript"></script>
 	<script src="js/header.js" type="text/javascript"></script>
-	<script src="js/glitch/glitch.js" type="text/javascript"></script>
-	<script src="js/html2canvas/dist/html2canvas.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500|Sorts+Mill+Goudy:400,400i&amp;subset=latin-ext" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e435ff5026.js"></script>
 </head>
-<!-- <header class="navbar-fixed-top">
-		<h1>THE NEWS</h1>
-</header>
-<body>
-	<ul class="data">
-	</ul>
-
-</body>
-</html> -->
 
 <header id="topnav" align="center">
   <div class="inner">
 		<hr>
 		<br>
-    <div class="logo">The Newest News</div>
+    <div class="logo" "id=glitched">The Newest News</div>
     <nav role="navigation">
       <ul>
         <li id="today"></li>
 				<li class="divider">|</li>
-				<li><i class="fa fa-file-text-o" aria-hidden="true"></i><a href="#">Today's Paper</a></li>
+				<li><i class="fa fa-file-text-o" aria-hidden="true"></i><a href="javascript:window.print();">Today's Paper</a></li>
+					<!-- <input type="button" onclick="printpaper()" value="Today's Paper"> -->
 				<li class="divider">|</li>
         <li><a href="#">About</a></li>
       </ul>

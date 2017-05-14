@@ -1,0 +1,18 @@
+@media print {
+/*@media print and (width: 210mm) and (height: 297mm) {*/
+  @page .print-landscape-a4 {
+    size: A4 landscape;
+  }
+
+  ul.data p {
+   display: none;
+  }
+
+ @bottom-left {
+    margin: 10pt 0 30pt 0;
+    border-top: .25pt solid #666;
+    content: "My book";
+    font-size: 9pt;
+    color: #333;
+  }
+}

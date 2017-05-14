@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
 // API call format:
@@ -27,7 +26,20 @@ $(document).ready(function(){
 					$(".data").append("</li>")
 				}
 			}
-			$(".data").append("<h3 id='end'> That's the newest news. </h3>")
+			$(".data").append("<h3 id='end'> That's the newest news. Updated " + today.toLocaleTimeString() + ".</h3>")
 		}
-	})
+	});
+
+	// $("#glitched").glitch();
+	// $("#currentContent").glitch({
+  //   amount: 8,
+  //   complete: function(canvas){
+  //       console.log("good and glitchy")
+  //   }
+	// });
+
+	// glitch.replace(document.getElementById("glitched"), {
+	//     amount: 6
+	// });
+
 });

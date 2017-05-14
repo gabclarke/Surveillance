@@ -81,6 +81,10 @@ nav li {
   display: inline;
 }
 
+nav.button {
+  border: none;
+}
+
 nav a {
   display: inline-block;
   /*color: #fff;*/
