@@ -12,14 +12,11 @@
 body {
   margin: 0;
   padding: 0;
-  /*height: 2000px;*/
-	font-family: 'Sorts Mill Goudy', serif;
   font-size: 12px;
   line-height: 1.5;
 }
 
-ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
-	/*font-family: 'Sorts Mill Goudy', serif;*/
+body, ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {
 	font-family: Georgia, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,9 +84,7 @@ nav.button {
 
 nav a {
   display: inline-block;
-  /*color: #fff;*/
   text-decoration: none;
-  /*padding: 25px;*/
   transition: 0.3s all;
 }
 
@@ -98,7 +93,6 @@ nav a:hover {
 }
 
 .logo {
-  /*float: left;*/
 	text-align: center;
 	color: #000;
   font-size: 50px;
