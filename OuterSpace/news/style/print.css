@@ -1,7 +1,7 @@
 @media print {
 /*@media print and (width: 210mm) and (height: 297mm) {*/
-  @page .print-landscape-a4 {
-    size: A4 landscape;
+  @page .print-portrait-a4 {
+    size: A4 portrait;
   }
 
   ul.data p {

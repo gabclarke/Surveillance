@@ -10,6 +10,11 @@
 	<!-- <link rel="stylesheet" href="style/glitch.css"> -->
 	<!-- <link rel="stylesheet" href="style/scss/style.css"> -->
 	<script src="js/libs/jquery-2.1.4.min.js" type="text/javascript"></script>
+	<!-- <script src="js/html2canvas/dist/html2canvas.js" type="text/javascript"></script> -->
+	<!-- <script src="js/glitch/glitch.js" type="text/javascript"></script> -->
+	<script src='js/config.js' type='text/javascript' ></script>
+	<script src="js/script.js" type="text/javascript"></script>
+	<script src="js/header.js" type="text/javascript"></script>
 	<style>
 		/* NOTE: Glitch styles inline because Prefixfree needs access to your styles
 		and they must be inlined if they are on local disk! */
@@ -200,11 +205,6 @@
 		</style>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-	<script src="js/html2canvas/dist/html2canvas.js" type="text/javascript"></script>
-	<script src="js/glitch/glitch.js" type="text/javascript"></script>
-	<script src='js/config.js' type='text/javascript' ></script>
-	<script src="js/script.js" type="text/javascript"></script>
-	<script src="js/header.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500|Sorts+Mill+Goudy:400,400i&amp;subset=latin-ext" rel="stylesheet">
 	<script src="https://use.fontawesome.com/e435ff5026.js"></script>
 </head>
@@ -218,7 +218,7 @@
       <ul>
         <li id="today"></li>
 				<li class="divider">|</li>
-				<li><i class="fa fa-file-text-o" aria-hidden="true"></i><a href="javascript:window.print();">Today's Paper</a></li>
+				<li><i class="fa fa-file-text-o" aria-hidden="true"></i><a href="#" onclick="printGlitch();">Today's Paper</a></li>
 				<li class="divider">|</li>
         <li><a href="#">About</a></li>
       </ul>
@@ -234,4 +234,4 @@
 		</ul>
   </div>
 </section>
-<div class="glitch" data-text="GLITCH">GLITCH</div>
+<!-- <div class="glitch" data-text="GLITCH">GLITCH</div> -->

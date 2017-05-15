@@ -18,7 +18,7 @@ $(document).ready(function(){
 			console.log(data.results);
 			for (var i = 0; i<30; i++){
 				if(data.results[i]){
-					$(".data").append("<li>")
+					$(".data").append("<li class='change'>")
 					// $(".data").append("<img src='" + data.results[i].thumbnail_standard + "'>")
 					$(".data").append("<h1><a href='" + data.results[i].url + "'>" + data.results[i].title + "</a></h1>")
 					$(".data").append("<p class='byline'>" + data.results[i].byline + "<p>")
@@ -30,16 +30,15 @@ $(document).ready(function(){
 		}
 	});
 
-	// $("#glitched").glitch();
-	// $("#currentContent").glitch({
-  //   amount: 8,
-  //   complete: function(canvas){
-  //       console.log("good and glitchy")
-  //   }
-	// });
-
-	// glitch.replace(document.getElementById("glitched"), {
-	//     amount: 6
-	// });
-
 });
+
+function printGlitch() {
+	var all = document.getElementsByClassName("change");
+	var i;
+	for (i = 0; i < all.length; i++) {
+	    all[i].setAttribute("class", "glitch");
+	}
+	console.log('print');
+	window.print();
+
+}
