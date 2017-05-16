@@ -4,6 +4,10 @@
     size: A4 portrait;
   }
 
+  .logo {
+    font-size: 75px;
+  }
+
   .data {
     font-size: .5em;
   }

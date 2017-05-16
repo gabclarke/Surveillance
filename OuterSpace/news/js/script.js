@@ -21,11 +21,11 @@ $(document).ready(function(){
 					$(".data").append("<li>")
 					$(".data").append("<h1 class='change' data-text='" + data.results[i].title + "'><a href='" + data.results[i].url + "'>" + data.results[i].title + "</a></h1>")
 					$(".data").append("<p class='byline'>" + data.results[i].byline + "<p>")
-					$(".data").append("<p>" + data.results[i].abstract + "<p>")
+					$(".data").append("<p class='change' data-text='" + data.results[i].abstract + "'>" + data.results[i].abstract + "<p>")
 					$(".data").append("</li>")
 				}
 			}
-			$(".data").append("<h3 id='end'> That's the newest news. Updated " + today.toLocaleTimeString() + ".</h3>")
+			$(".data").append("<h3 id='end' class='flip'> That's the newest news. Updated " + today.toLocaleTimeString() + ".</h3>")
 		}
 	});
 
@@ -34,10 +34,16 @@ $(document).ready(function(){
 function printGlitch() {
 	// all[0].setAttribute("class", "logo glitch"); // set logo class to glitch
 	document.getElementsByClassName("logo")[0].setAttribute("class", "logo glitch");
+	document.getElementsByClassName("flip")[0].setAttribute("class", "upsidedown");
 	var all = document.getElementsByClassName("change");
+	console.log(all);
+	console.log(all.length);
 	var i;
 	for (i = 0; i < all.length; i++) {
-	    all[i].setAttribute("class", "glitch");
+		console.log(all[i]);
+		var rand = Math.floor((Math.random() * 14));
+		var rand2 = Math.floor((Math.random() * 14));
+	  all[i].setAttribute("class", "glitch" + rand + " glitch" + rand2);
 	}
 	window.print();
 
