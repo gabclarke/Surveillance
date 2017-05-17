@@ -1,14 +1,23 @@
+/*The Newest News*/
+/*Gaby Clarke, Spring 2017*/
+/*Parsons Paris, Spatial Lab*/
+
 @media print {
-/*@media print and (width: 210mm) and (height: 297mm) {*/
+
   @page .print-portrait-a4 {
     size: A4 portrait;
   }
 
   .logo {
-    font-size: 75px;
+    transform: scale(.5);
+  }
+
+  section .inner {
+    padding-top: 0px;
   }
 
   .data {
-    font-size: .5em;
+    /*position: fixed;*/
+    transform: scale(.5);
   }
 }
