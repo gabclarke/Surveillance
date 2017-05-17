@@ -1,0 +1,23 @@
+/*The Newest News*/
+/*Gaby Clarke, Spring 2017*/
+/*Parsons Paris, Spatial Lab*/
+
+@media print {
+
+  @page .print-portrait-a4 {
+    size: A4 portrait;
+  }
+
+  .logo {
+    transform: scale(.5);
+  }
+
+  section .inner {
+    padding-top: 0px;
+  }
+
+  .data {
+    /*position: fixed;*/
+    transform: scale(.5);
+  }
+}
